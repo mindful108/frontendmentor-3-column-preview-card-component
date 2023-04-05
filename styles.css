@@ -1,0 +1,231 @@
+/* ================ */
+/* Reset */
+/* ================ */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: normal;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ================ */
+/* Globals */
+/* ================ */
+:root {
+  --brightOrange: hsl(31, 77%, 52%);
+  --darkCyan: hsl(184, 100%, 22%);
+  --veryDarkCyan: hsl(179, 100%, 13%);
+
+  --transparentWhite: hsla(0, 0%, 100%, 0.75);
+  /* paragraphs */
+
+  --veryLightGray: hsl(0, 0%, 95%);
+  /* background, headings, buttons */
+}
+
+/* ================ */
+/* Design Templates
+Used to refine designs 
+live in browser */
+/* ================ */
+
+.template-mobile {
+  width: 375px;
+  height: 1502px;
+  position: absolute;
+  opacity: 0.5;
+  top: -45px;
+  display: none;
+}
+
+.template-desktop {
+  width: 1440px;
+  height: 800px;
+  position: absolute;
+  opacity: 0.25;
+  top: -147px;
+  display: none;
+}
+
+/* ================ */
+/* Styles */
+/* ================ */
+
+body {
+  position: relative;
+  line-height: 1.5;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  font-family: 'Lexend Deca', sans-serif;
+  background-color: var(--veryLightGray);
+  padding: 1.5625rem;
+  padding-bottom: 5rem;
+}
+
+section.cars {
+  border-radius: .5rem;
+  overflow: hidden;
+}
+
+article {
+  color: var(--transparentWhite);
+  padding: 3rem 3rem 3.8rem;
+  max-width: 565px;
+}
+
+.icon {
+  margin-bottom: 1.8rem;
+}
+
+h2 {
+  color: var(--veryLightGray);
+  font-family: 'Big Shoulders Display', display;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.description {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  margin-bottom: 2.1rem;
+}
+
+.learn-more {
+  background-color: var(--veryLightGray);
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  padding: 1em 2em;
+  border-radius: 5em;
+  border: 2px solid;
+  transition: all 0.2s ease;
+}
+
+.learn-more:hover,
+.learn-more:active {
+  background-color: transparent;
+  color: var(--transparentWhite) !important;
+}
+
+.sedans {
+  background-color: var(--brightOrange);
+}
+
+.sedans .learn-more {
+  color: var(--brightOrange);
+}
+
+.suv {
+  background-color: var(--darkCyan);
+}
+
+.suv .learn-more {
+  color: var(--darkCyan);
+}
+
+.luxury {
+  background-color: var(--veryDarkCyan);
+}
+
+.luxury .learn-more {
+  color: var(--veryDarkCyan);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  padding: 1.5rem;
+  font-size: 0.8rem;
+  opacity: 1;
+  line-height: 1.8;
+  text-align: center;
+  color: #999;
+}
+
+footer a {
+  /* attribution*/
+  font-weight: 900;
+  color: var(--darkCyan);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+/* ================ */
+/* Media Queries */
+/* ================ */
+
+@media (min-width: 850px) and (min-height: 650px) {
+  body {
+    height: 100vh;
+  }
+}
+
+@media (min-width: 850px) {
+  section.cars {
+    display: flex;
+    max-width: 920px;
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 2.8rem;
+  }
+  .description {
+    margin-bottom: 5.1rem;
+  }
+}
+
+
+@media (max-width: 313px) {
+  article {
+    padding: 2rem 2rem 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+    margin-bottom: .5rem;
+  }
+  .description {
+    font-size: .85rem;
+    line-height: 1.6;
+  }
+  .learn-more {
+    font-size: 0.75rem;
+    padding: 1em 1.25em;
+  }
+}
